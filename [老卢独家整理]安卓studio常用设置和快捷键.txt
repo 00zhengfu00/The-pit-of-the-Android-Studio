@@ -1,0 +1,94 @@
+Android studio常用快捷键和设置
+
+
+=======================================
+>>>>>>>>>>>>>>>>>>
+关于版本的问题：(以我的电脑配置为例，具体参考你的电脑设置)
+  >>>> 查看studio版本:
+      ====> 点菜单栏的 help --> About  
+            如果使用的是 E:\develop\android\Android Studio 可以看到 2.1.2
+            如果使用的是 E:\develop\android studio2.3.1\android-studio  可以看到 2.3.1
+  
+  >>>> 查看gradle版本
+      ====> 打开 E:\develop\android\Android Studio\gradle 就可以看到gradle版本是 2.10
+      ====> 打开 E:\develop\android studio2.3.1\android-studio\gradle,就可以看到gradle版本是 3.5
+  >>>> 查看当前设置的Gradle的版本及Gradle插件的版本
+      ====> 点击菜单 File --> Project Structure --> 选择 Project,在对话框的右侧可以看到Gradle的版本及Gradle插件的版本
+  
+  查看本地的gradle编译版本：E:\develop\android\sdk\build-tools
+  
+=======================================
+>>>>>>>>>>>>>>>>>>
+
+一、常用设置:( 快捷键Ctrl + Alt + S )
+1.studio设置自动导包:
+    File - Settings - Editor - General - Auto Import - 勾选上 optimize imports on the fly 和 
+                                                  add unambiguous imports on the fly 的选项即可
+2.显示行号
+    File - Settings - Editor - General - Appearance -- 勾上 Show line numbers
+3.不区分大小写
+    File - Settings - Editor - General - Code Completion -- 在 Case sensitive completion 后面的选项改成NONE:进行模糊匹配。
+	(First Letter：根据首字母进行匹配)
+4.字体大小设置
+    File - Settings - Editor - Colors & Fonts - Font 。默认系统显示的Scheme为Defualt是不能编辑的,只要点击右侧的Save As... ，
+	保存一份自己的设置，并在当中设置。之后，在 Editor Font 中即可设置字体
+5.设置光标悬停时提示文档注释
+    File - Settings - Editor - General ——> 勾选 Show quick doc on mouse Delay…
+
+=======================================
+>>>>>>>>>>>>>>>>>>
+
+二、一些快捷键:
+双击Shift 快速搜索
+格式化: Ctrl + Alt + L ( File --> Setting --> Keymap --> Reformat Code,或者在Keymap右上的搜索栏搜 Reformat)
+alt + enter 导包
+Ctrl+ O 重写方法
+Ctrl + I 实现方法
+Shift + F6 重命名
+Alt + Insert 动生成get和set方法,  或者点击菜单栏Code --> Generate
+ctrl + D 复制行
+Ctrl + Y 删除行
+ctrl + / 单行注释
+ctrl shift + / 文档注释
+提取局部变量(获取返回值)：Ctrl+Alt+V
+提取全局变量：Ctrl+Alt+F
+提取方法：Shit+Alt+M
+抽取样式 :光标放在控件内: 右键 –> Refactor –> Extract –> Style… ,或者自定义快捷方式,比如我定义的是Alt+Y
+
+=======================================
+>>>>>>>>>>>>>>>>>>
+
+三、其他设置
+ 1)Android Studio首次安装运行时卡在更新处理方法，Android Studio安装目录下的 bin 目录下,找到 idea.properties 文件,在文件最后追加
+	disable.android.first.run=true
+ 
+ 2)禁用studio的自动检查更新,File --> Settings --> Appearance & Behavior --> System Settings --> Updates,取消钩钩就是禁止更新,
+右侧的列表，是更新通道。
+    Stable Channel ： 正式版本通道，只会获取最新的正式版本。(最稳定)
+    Beta Channel ： 测试版本通道，只会获取最新的测试版本。
+    Dev Channel ： 开发发布通道，只会获取最新的开发版本。
+    Canary Channel ： 预览发布通道，只会获取最新的预览版本(问题较多,不建议选择这个)
+ 
+ 3）设置 Gradle 的离线模式：
+    File --> Settings --> Bulid,Execution,Deployment --> Bulid Tools --> Gradle,把以下这两个打钩：
+      a:use default gradle wapper (recommended)
+      b:Offline work
+ 
+ 4)设置 Android SDK路径：Settings —— Appearance and Behavior —— System Settings —— Android SDK
+ 
+ 5)运行Android Studio会提醒你 JDK 或者 Android SDK 不存在,你需要到全局的Project Structure 页面下进行设置。进入全局的
+Project Structure 页面方法如下：
+    方法1:选择 Configure --> Project Defaults --> Project Structure
+	方法2:选择 File --> Other Settings --> Default Project Structure,设置 JDK 或者 Android SDK 目录即可
+ 
+ 6)使用炫酷的黑色界面：Settings --> Appearance --> Theme ，选择 Darcula 主题
+ 
+ 7)快捷键设置:File - Settings - Keymap
+ 
+ 8)插件安装：File - Settings - Plugins —–> Browse repositories…  搜索插件安装
+ 
+ 9)显示空格(这样就能看出缩进是 tab 缩进还是空格缩进,建议使用空格缩进)
+    File - Settings - Editor - General - Appearance，勾选 Show whitespaces
+ 
+ 10)设置包类列表的显示方式(eclipse的完全显示或者studio的层级列表样式):
+    点击project哪一行的有一个圆的齿轮,点击一下,选择Flatten Packages 就可以像eclipse那样完全显示了,反之,去掉这个对勾,就是studio的样式了. 

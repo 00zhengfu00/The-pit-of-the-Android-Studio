@@ -1,0 +1,137 @@
+﻿安卓studio好用的插件:
+以下只列举插件名称.打开studio的settings里面都是可以找到的.
+
+我下载的插件有以下这些：
+
+Android ButterKnife Plugin Plus √
+
+Android Methods Count √
+
+Android Parcelable code generator √
+GenerateSerialVersionUID √
+
+GsonFormat √
+
+LayoutFormatter √
+LayoutFormat 功能有两个：1.批量去格式化layout.xml，2.修改某一个layout.xml硬编码
+使用中可能会遇到的问题
+在导入插件时，windows下可能会出现插件加载失败的情况。会报下面的错误：
+cannot create class "com.shang.layoutformat.LayoutFormat" [Plugin: com.shang.android.layoutformat]
+com.intellij.diagnostic.PluginException: cannot create class "com.shang.layoutformat.LayoutFormat" [Plugin: com.shang.android.layoutformat]
+    at com.intellij.openapi.actionSystem.impl.ActionManagerImpl.convertStub(ActionManagerImpl.java:177)
+    at com.intellij.openapi.actionSystem.impl.ActionManagerImpl.convert(ActionManagerImpl.java:515)
+    at com.intellij.openapi.actionSystem.impl.ActionManagerImpl.getActionImpl(ActionManagerImpl.java:495)
+    at com.intellij.openapi.actionSystem.impl.ActionManagerImpl.getAction(ActionManagerImpl.java:488)
+    at com.intellij.openapi.actionSystem.DefaultActionGroup.unStub(DefaultActionGroup.java:354)
+    at com.intellij.openapi.actionSystem.DefaultActionGroup.getChildren(DefaultActionGroup.java:312)
+    at com.intellij.openapi.actionSystem.impl.ActionManagerImpl$5.compute(ActionManagerImpl.java:1315)
+    at com.intellij.openapi.actionSystem.impl.ActionManagerImpl$5.compute(ActionManagerImpl.java:1308)
+    at com.intellij.openapi.application.impl.ApplicationImpl.runReadAction(ApplicationImpl.java:967)
+    at com.intellij.openapi.actionSystem.impl.ActionManagerImpl.preloadActionGroup(ActionManagerImpl.java:1308)
+    at com.intellij.openapi.actionSystem.impl.ActionManagerImpl.preloadActionGroup(ActionManagerImpl.java:1323)
+    at com.intellij.openapi.actionSystem.impl.ActionManagerImpl.preloadActionGroup(ActionManagerImpl.java:1323)
+    at com.intellij.openapi.actionSystem.impl.ActionManagerImpl.preloadActionGroup(ActionManagerImpl.java:1323)
+    at com.intellij.openapi.actionSystem.impl.ActionManagerImpl.preloadActionGroup(ActionManagerImpl.java:1302)
+    at com.intellij.openapi.actionSystem.impl.ActionManagerImpl.doPreloadActions(ActionManagerImpl.java:1290)
+    at com.intellij.openapi.actionSystem.impl.ActionManagerImpl.access$200(ActionManagerImpl.java:77)
+    at com.intellij.openapi.actionSystem.impl.ActionManagerImpl$4.run(ActionManagerImpl.java:1278)
+    at com.intellij.openapi.application.impl.ApplicationImpl$8.run(ApplicationImpl.java:366)
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+    at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+    at java.lang.Thread.run(Thread.java:744)
+    at org.jetbrains.ide.PooledThreadExecutor$1$1.run(PooledThreadExecutor.java:55)
+Caused by: com.intellij.diagnostic.PluginException: com/shang/layoutformat/LayoutFormat : Unsupported major.minor version 52.0 [Plugin: com.shang.android.layoutformat]
+    at com.intellij.ide.plugins.cl.PluginClassLoader.loadClassInsideSelf(PluginClassLoader.java:130)
+    at com.intellij.ide.plugins.cl.PluginClassLoader.tryLoadingClass(PluginClassLoader.java:77)
+    at com.intellij.ide.plugins.cl.PluginClassLoader.loadClass(PluginClassLoader.java:66)
+    at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+    at java.lang.Class.forName0(Native Method)
+    at java.lang.Class.forName(Class.java:270)
+    at com.intellij.openapi.actionSystem.impl.ActionManagerImpl.convertStub(ActionManagerImpl.java:153)
+    ... 23 more
+Caused by: java.lang.UnsupportedClassVersionError: com/shang/layoutformat/LayoutFormat : Unsupported major.minor version 52.0
+    at java.lang.ClassLoader.defineClass1(Native Method)
+    at java.lang.ClassLoader.defineClass(ClassLoader.java:800)
+    at java.lang.ClassLoader.defineClass(ClassLoader.java:643)
+    at com.intellij.util.lang.UrlClassLoader._defineClass(UrlClassLoader.java:260)
+    at com.intellij.util.lang.UrlClassLoader.defineClass(UrlClassLoader.java:256)
+    at com.intellij.util.lang.UrlClassLoader._findClass(UrlClassLoader.java:225)
+    at com.intellij.ide.plugins.cl.PluginClassLoader.loadClassInsideSelf(PluginClassLoader.java:124)
+
+这是使用的android studio 的运行时的jdk版本低于插件的jdk,换成最新的jre1.8就OK了（查看android studio 的 java 版本是在：
+菜单栏 > Help  > About）
+
+
+
+Android Styler
+Android Accessors  找不到
+LayoutCreator  找不到
+
+
+ECTranslation  可以将英文翻译为中文
+
+Lifecycle Sorter 可以根据Activity或者fragment的生命周期对其生命周期方法位置进行先后排序。
+
+PermissionsDispatcher plugin
+
+
+
+
+Parcelable
+Serializable
+Accessors 寄存器
+
+
+AndroidLocalizationer 可用于将项目中的 string 资源自动翻译为其他语言
+TranslationPlugin 又一翻译插件,可中英互译
+ReciteWords 这是一个androidStudio翻译与陌生单词记录插件，你所翻译的单词会被记录在你当前用户目录下的ReciteWords.md文件中（如:C:\Users\Bolex\ReciteWords.md）。可以通过Markdown编辑器打开它进行学习。
+
+
+
+
+第三方注解，事件和依赖注入库可视化工具：
+1.dagger-intellij-plugin     dagger可视化辅助工具
+2.otto-intellij-plugin       otto事件导航工具
+3.eventbus-intellij-plugin   eventbus导航插件
+
+辅助工具
+1.Android Postfix Completion 可根据后缀快速完成代码，这个插件在studio原有的基础上增添了一些新的功能
+2.GradleDependenciesHelperPlugin   maven gradle依赖支持自动补全
+3.CodeGlance  在右边可以预览代码，实现快速定位
+
+5.Lifecycle Sorter 可以根据Activity或者fragment的生命周期对其生命周期方法位置进行先后排序，快捷键Ctrl + alt + K
+6.CheckStyle-IDEA 检查代码风格的插件，比如像命名约定，Javadoc，类设计等方面进行代码规范和风格的检查，你们可以遵从像Google Oracle 的Java 代码指南 ，当然也可以按照自己的规则来设置配置文件，从而有效约束你自己更好地遵循代码编写规范。
+
+
+UI优化有关：
+1.lint-cleaner-plugin 删除未使用的资源,包括String字符串,颜色和尺寸。 这是一个Gradle插件，所以如何配置可以去github的源码上看。
+插件源码地址：https://github.com/marcoRS/lint-cleaner-plugin
+2.folding-plugin  布局文件分组的插件，该插件可自动将前缀相同的文件归类显示到同一文件目录下，但不会因此而移动文件或创建文件夹。
+
+主题相关：
+1.Material Theme UI  添加Material主题到你的AS
+2.Android Studio插件之sexy editor（设置AS背景）
+
+
+测试和调试相关：
+1.Robotium Recorder  一个自动化测试框架，用于测试在模拟器和Android设备上原生的和混合的移动应用程序。Robotium Recorder可以让你记录测试案例和用户操作。你也可以查看不同Android活动时的系统功能和用户测试场景。
+2. ADB WIFI 无需root就能wifi调试
+3.adb-idea 可以一键清理缓存并重启APP
+4..JSONOnlineViewer 可实现直接在android studio中调试接口数据，可以选择请求类型，自定义请求头及请求体，json数据格式化后展示
+5.LeakCanary 帮助你在开发阶段方便的检测出内存泄露的问题
+
+
+Android Holo Colors Generator  通过自定义Holo主题颜色生成对应的Drawable和布局文件
+AndroidMaterialDesignIconGenerator 
+Strings-xml-tools 管理Android项目中的字符串资源，它提供了排序Android本地文件和添加缺少的字符串的基本操作。
+Android Code Generator 根据布局文件快速生成对应的Activity，Fragment，Adapter，Menu
+BorePlugin Android Studio 自动生成布局代码插件
+Android Drawable Importer 这是一个非常强大的图片导入插件。它导入Android图标与Material图标的Drawable ，批量导入Drawable ，多源导入Drawable（即导入某张图片各种dpi对应的图片）
+SelectorChapek for Android 通过资源文件命名自动生成Selector文件，已经3年没更新，使用过程会报错。
+Android Studio Prettify 可以将代码中的字符串写在string.xml文件中
+
+
+SingletonTest 快速生成单例模式的预设，单例的六种生成方式:LazyUnSafe,LazySafe,Hungry,DoubleCheck,StaticInner,Enum。
+databinding-support       一个可以快速实现databinding的插件
